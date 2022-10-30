@@ -68,14 +68,12 @@ public class Game1 : Game
 
     private void PerformScreenFit()
     {
-        var rectangle = GraphicsDevice.Viewport.Bounds;
-        var width = rectangle.Width;
-        var height = rectangle.Height;
+        var (_, _, width, height) = GraphicsDevice.Viewport.Bounds;
         var aspectRatioViewport = GraphicsDevice.Viewport.AspectRatio;
         var aspectRatioVirtualDisplay = (float)VirtualSystem.Display.Width / VirtualSystem.Display.Height;
 
-        float rx = 0f;
-        float ry = 0f;
+        var rx = 0f;
+        var ry = 0f;
         float rw = width;
         float rh = height;
         
